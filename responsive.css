@@ -1,0 +1,206 @@
+/* Touch-first layout and safe-area support for mobile Safari/Chrome. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 12px;
+}
+
+body {
+  min-width: 320px;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-x: none;
+}
+
+button,
+a,
+input {
+  touch-action: manipulation;
+}
+
+.shellbar {
+  padding-top: max(10px, env(safe-area-inset-top));
+  padding-left: max(12px, env(safe-area-inset-left));
+  padding-right: max(12px, env(safe-area-inset-right));
+}
+
+#app {
+  min-height: calc(100vh - 90px);
+  min-height: calc(100svh - 90px);
+}
+
+.drawer {
+  height: 100vh;
+  height: 100dvh;
+  padding-bottom: max(20px, env(safe-area-inset-bottom));
+  padding-right: max(20px, env(safe-area-inset-right));
+}
+
+.drawer-item {
+  min-height: 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.map-pin {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+}
+
+@media (max-width: 800px) {
+  .shellbar {
+    padding-bottom: 10px;
+  }
+
+  .browser-tools {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .omnibox {
+    min-width: 0;
+    flex-basis: 100%;
+    order: 2;
+  }
+
+  .browser-tools > button {
+    min-height: 44px;
+    max-width: none !important;
+    overflow: visible !important;
+    padding: 8px 9px;
+  }
+
+  .omnibox input,
+  .search-inline input,
+  .map-search input {
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .omnibox button,
+  .hero-search button,
+  .search-inline button,
+  .map-layer,
+  .year-switch button,
+  .version-tabs button,
+  .record-tools button,
+  .thread-foot button,
+  .drawer-head button {
+    min-height: 44px;
+  }
+
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-grid > section {
+    min-width: 0;
+  }
+
+  .map-layout {
+    min-height: 0;
+  }
+
+  .map-canvas {
+    min-height: 300px;
+    height: 52svh;
+  }
+
+  .place-card {
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+
+  .post-user a,
+  .related-pages a,
+  .forum-mast nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shellbar {
+    padding-left: max(8px, env(safe-area-inset-left));
+    padding-right: max(8px, env(safe-area-inset-right));
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .browser-tools {
+    gap: 5px;
+  }
+
+  .browser-tools > button {
+    flex: 1 1 auto;
+    min-width: 42px;
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+
+  .browser-tools > button#historyBtn,
+  .browser-tools > button#evidenceBtn {
+    flex: 1 1 100px;
+  }
+
+  .archive-home {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .archive-welcome {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .record-main,
+  .record-sidebar,
+  .thread,
+  .cache-card,
+  .place-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .record-meta {
+    grid-template-columns: minmax(70px, .65fr) minmax(0, 1fr);
+  }
+
+  .compare-grid p,
+  .saved-snapshot p {
+    overflow-wrap: anywhere;
+  }
+
+  .map-canvas {
+    height: 46svh;
+    min-height: 270px;
+  }
+
+  .map-pin {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@supports not (height: 100svh) {
+  @media (max-width: 800px) {
+    .map-canvas { height: 52vh; }
+  }
+  @media (max-width: 480px) {
+    .map-canvas { height: 46vh; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
