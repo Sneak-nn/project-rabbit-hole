@@ -1,38 +1,6 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#101714">
-  <title>临江旧影 · 地方影像档案馆</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="touchups.css">
-  <link rel="stylesheet" href="map-history.css">
-  <link rel="stylesheet" href="responsive.css">
-</head>
-<body>
-  <div class="noise" aria-hidden="true"></div>
-  <header class="shellbar">
-    <div class="brand"><span class="brand-mark">临</span><div><b>临江旧影</b><small>临江市地方影像档案馆</small></div></div>
-    <div class="browser-tools" aria-label="浏览器导航">
-      <button id="backBtn" title="后退" aria-label="后退">←</button><button id="forwardBtn" title="前进" aria-label="前进">→</button>
-      <button id="homeBtn" title="返回入口" aria-label="返回入口">⌂</button>
-      <form id="omniboxForm" class="omnibox"><span aria-hidden="true">⌕</span><input id="omnibox" name="q" type="search" enterkeyhint="search" autocapitalize="off" autocomplete="off" aria-label="搜索网页" placeholder="搜索人名、地点、编号，或直接提问…"><button type="submit">搜索</button></form>
-      <button id="historyBtn" title="最近浏览">最近浏览 <span id="historyCount">0</span></button>
-      <button id="evidenceBtn" title="已保存页面">已保存 <span id="evidenceCount">0</span></button>
-    </div>
-  </header>
-
-  <main id="app" tabindex="-1"></main>
-
-  <aside id="drawer" class="drawer" aria-hidden="true">
-    <div class="drawer-head"><h2 id="drawerTitle">调查记录</h2><button id="drawerClose" aria-label="关闭">×</button></div>
-    <div id="drawerBody"></div>
-  </aside>
-  <div id="scrim" class="scrim" hidden></div>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="app.js"></script>
-</body>
-</html>
-
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#13272a"><title>晚自习之后｜临江三中资料检索</title><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="stylesheet" href="stage05b-framework.css"><link rel="stylesheet" href="stage05b-game.css"></head>
+<body><header class="bar"><a href="index.html" data-home class="brand">临江三中资料检索</a><nav><a href="?page=A01" data-page="A01">校友网</a><a href="?page=F02" data-page="F02">资料室</a><a href="?page=A03" data-page="A03">地图</a></nav><div class="tools"><button id="back" aria-label="后退">←</button><button id="forward" aria-label="前进">→</button><button id="history">历史</button><button id="evidence">证据 <span id="evidenceCount">0</span></button></div></header>
+<form id="search" class="search"><input name="q" type="search" placeholder="搜索页面、日期、来源或证据编号" aria-label="搜索资料"><button>搜索</button></form><main id="app" tabindex="-1"></main>
+<aside id="drawer" aria-hidden="true"><header><h2 id="drawerTitle"></h2><button id="drawerClose" aria-label="关闭">×</button></header><div id="drawerBody"></div></aside><div id="scrim" hidden></div>
+<dialog id="lightbox"><button id="lightboxClose" aria-label="关闭图片">×</button><img id="lightboxImg" alt=""><p id="lightboxCaption"></p></dialog><div id="toast" role="status" aria-live="polite"></div><script src="stage05b-game.js"></script></body></html>
